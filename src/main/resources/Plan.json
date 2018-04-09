@@ -1,0 +1,9 @@
+{
+"id" : "3deba1f6-55c5-4ed6-8432-4b40b78c9711",
+"name" : "pa-autoscaler",
+"description" : "pa-autoscaler",
+"metadata" : {"max_size" : "10240M",
+"connections" : 100,
+"bullets" : ["Each app has its own credential","100 apps at most"],
+"displayName":"pa free plan"}
+}

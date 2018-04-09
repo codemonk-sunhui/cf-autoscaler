@@ -1,0 +1,40 @@
+package com.pivotal.cf.broker.model;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.hibernate.validator.constraints.NotEmpty;
+
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
+@JsonAutoDetect(getterVisibility = JsonAutoDetect.Visibility.NONE)
+public class Catalog {
+
+	@NotEmpty
+	@JsonSerialize
+	@JsonProperty("services")
+	private List<ServiceDefinition> serviceDefinitions = new ArrayList<ServiceDefinition>();
+	
+	
+
+	public Catalog() {
+	}
+
+	public Catalog(List<ServiceDefinition> serviceDefinitions) {
+		this.setServiceDefinitions(serviceDefinitions);
+	}
+
+	public List<ServiceDefinition> getServiceDefinitions() {
+		return serviceDefinitions;
+	}
+
+	public void setServiceDefinitions(List<ServiceDefinition> serviceDefinitions) {
+		if (serviceDefinitions == null) {
+			this.serviceDefinitions = new ArrayList<ServiceDefinition>();
+		} else {
+			this.serviceDefinitions = serviceDefinitions;
+		}
+	}
+}
